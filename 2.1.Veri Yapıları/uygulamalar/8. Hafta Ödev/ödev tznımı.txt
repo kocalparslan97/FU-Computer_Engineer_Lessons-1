@@ -1,0 +1,10 @@
+A ve B karakterler tutan iki farklý kümedir. 
+Bu iki küme kullanýlarak A birleþim B ve  A kesiþim B iþlemleri yapýlmak isteniyor. 
+Buradaki en büyük zorluk küme elemanlarýnýn sýralanmamýþ olmasýndan kaynaklanmaktadýr. 
+Her bir elemanýn diðer kümenin bütün elemanlarý ile karþýlaþtýrýlmasý ise problemin zaman 
+karmaþýklýðýný arttýrmaktadýr. Bu yüzden çözüm yolu olarak heap aðacýnýn kullanýmý uygun görülmüþtür. 
+
+Buna göre;
+- A ve B kümeleri için binary heap aðaçlarýný oluþturarak ekleme, silme ve arama metotlarýný yazýnýz?
+- A ve B kümesinin kesiþimini döndüren bir metot yazýnýz?
+- A ve B kümesinin birleþimini döndüren bir metot yazýnýz?

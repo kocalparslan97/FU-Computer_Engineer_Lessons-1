@@ -1,0 +1,10 @@
+package yigitdizi;
+public class main {
+    public static void main(String[] args) {
+        yigitDizi yigitlar=new yigitDizi(8);
+        yigitlar.y1Push(3);yigitlar.y1Push(5);yigitlar.y1Push(4);yigitlar.y1Push(1);yigitlar.y1Push(1);yigitlar.y1Pop();
+        yigitlar.y2Push(3);yigitlar.y2Push(2);yigitlar.y2Push(9);yigitlar.y2Push(1);
+        yigitlar.y1Goster();
+        yigitlar.y2Goster();
+    }
+}

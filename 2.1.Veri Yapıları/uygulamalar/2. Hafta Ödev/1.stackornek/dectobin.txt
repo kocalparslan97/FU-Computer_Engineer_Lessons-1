@@ -1,0 +1,38 @@
+   package stackornek;
+public class dectobin {
+    int sayi;
+    Stack stack;
+    dectobin(int sayi){
+        this.sayi=sayi;
+        stack=new Stack();
+    }
+    void cevir(){
+        if(sayi==0){
+            stack.push(new Node(0));
+        }
+        else{
+            while(sayi!=1){
+            stack.push(new Node(sayi%2));
+            sayi=sayi/2;
+        }
+        stack.push(new Node(1));
+        }
+        
+    }
+    
+    void cikar(){
+        System.out.println(stack.pop()+" çýkarýldý.");
+    }
+    
+    //tersine çevirme
+    void tersinecevir(){
+    int us=stack.boyut()-1;
+    int sonuc=0;
+        while(us!=-1){
+            sonuc=sonuc+(stack.pop()*(int)Math.pow(2, us));
+            us--;
+        }
+        System.out.println("");
+        System.out.println(sonuc);
+    }
+}

@@ -1,0 +1,15 @@
+Roundrobin iþ zamanlamasý algoritmasýnda, iþlerin büyüklükleri deðiþken olabilmektedir. 
+Quantum(q) adý verilen belirli bir boyuttan büyük iþlerin q büyüklüðü kadarlýk kýsmý tamamlanýp 
+kalaný kuyruðun sonuna tekrar eklenmektedir. 
+Büyüklüðü q dan küçük olan iþler ise tamamlanýp kuyruktan tamamen silinir. 
+Ýþlemci ’ye gelen iþler sýrasýyla 12 5 ve 18 olsun. Gelme sýrasýna göre iþler kuyruða eklenir. 
+q=10 seçilirse her adýmda kuyruk aþaðýdaki gibi olur. 
+
+Adým 1: 12 5 18 
+Adým 2: 5 18 2 (Kuyruðun baþýndaki iþin 10 birimi yapýldý. Kalan 2 birim kuyruðun sonuna eklendi )
+Adým 3: 18 2
+Adým 4: 2 8
+Adým 5: 8 
+Adým 6: Boþ
+Buna göre kuyruk sýnýfýný, ekleme ve silme metotlarýný yazýnýz? 
+Silme iþleminde tamamý bitirilemeyen iþlerin kuyruða yukarýda verilen þekilde eklenmesini de gerçekleþtiriniz?

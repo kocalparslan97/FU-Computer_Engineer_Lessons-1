@@ -1,0 +1,10 @@
+package esliparantezstack;
+
+public class Node {
+    Node sonraki;
+    char parantez;
+    Node (char parantez){
+        this.parantez=parantez;
+        this.sonraki=null;
+    }
+}

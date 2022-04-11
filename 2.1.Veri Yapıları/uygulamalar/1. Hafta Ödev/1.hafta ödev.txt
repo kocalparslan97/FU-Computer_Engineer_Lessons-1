@@ -1,0 +1,15 @@
+1.	Bir baðlý liste yapýsý ile tek parametreye sahip bir polinom(Örneðin P(x)= x3+3x2+5x+10) tutulmak isteniyor.
+ Baðlý listedeki her bir düðüm polinomun ilgili teriminin katsayýsý ve derecesini tutmaktadýr. Buna göre;
+-	Baðlý Liste ve düðüm veri yapýsýný veriniz?
+-	Baðlý listeye ekleme iþlemini dereceye göre sýralý yapan kodu veriniz?
+
+
+2.	Herbir düðümünde bir adet karakter tutan bir baðlý liste tasarlanmak isteniyor. Bu baðlý liste üzerinde aþaðýdaki iþlemleri gerçekleþtiren JAVA uygulamasýný kodlayýnýz.
+Ekleme,
+Baþtan ekleme
+Ýstenilen sýrada ekleme
+Sondan ekleme yapýlarý
+Silme
+Baþtan silme
+Ýstenilen sýrada silme
+Sondan silme

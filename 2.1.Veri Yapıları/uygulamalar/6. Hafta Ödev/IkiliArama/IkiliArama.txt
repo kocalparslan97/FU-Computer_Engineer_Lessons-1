@@ -1,0 +1,35 @@
+package ýkiliarama;
+public class IkiliArama {
+
+    public static void main(String[] args) {
+        Agac agac=new Agac();
+        agac.Ekle(new Yaprak(25,"Yýlmaz",0));
+        agac.Ekle(new Yaprak(14,"Mert",0));
+        agac.Ekle(new Yaprak(7,"Ali",0));
+        agac.Ekle(new Yaprak(5,"Mert",0));
+        agac.Ekle(new Yaprak(10,"Mert",0));
+        agac.Ekle(new Yaprak(23,"Yýlmaz",0));
+        agac.Ekle(new Yaprak(17,"Ali",0));
+        agac.Ekle(new Yaprak(24,"Ali",0));
+        agac.Ekle(new Yaprak(40,"Ali",0));
+        agac.Ekle(new Yaprak(34,"Ali",0));
+        agac.Ekle(new Yaprak(48,"Ali",0));
+        agac.Ekle(new Yaprak(36,"Ali",0));
+        
+        System.out.println("Preorder:");
+        agac.preorder(agac.root);
+        System.out.println("\nInorder:");
+        agac.inorder(agac.root);
+        System.out.println("\nPostorder:");
+        agac.postorder(agac.root);
+        System.out.println("\n");
+        
+        
+        agac.silme(17);
+        agac.maxDegerBul();
+        agac.minDegerBul();
+        agac.arama(6);
+        agac.goster();
+    }
+    
+}

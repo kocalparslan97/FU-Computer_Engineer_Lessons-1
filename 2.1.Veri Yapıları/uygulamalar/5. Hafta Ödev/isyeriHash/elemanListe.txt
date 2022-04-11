@@ -1,0 +1,85 @@
+package isyerihash;
+
+/**
+ *
+ * @author Mert
+ */
+public class elemanListe {
+
+    String Hash[];
+
+    elemanListe() {
+        Hash = new String[11];
+    }
+
+    void ekle(int no, String isim) {
+
+        int mod = no % 11;
+        boolean dolulukdurum = true;
+        while (dolulukdurum) {
+            if (Hash[mod] == null) {
+                Hash[mod] = isim;
+                dolulukdurum = false;
+            } else {
+                mod++;
+            }
+        }
+    }//HASH EKLE SONU
+
+    void sil(int no, String isim) {
+        boolean bulundumu = true;
+        boolean dongu = true;
+        int mod;
+        String aranan = isim;
+        mod = no % 11;
+        while (dongu) {
+            if (mod == 11) {
+                bulundumu = false;
+                dongu = false;
+            } else if (Hash[mod] == aranan) {
+                Hash[mod] = null;
+                dongu = false;
+            } else {
+                bulundumu = false;
+                mod++;
+            }
+        }
+
+        if (bulundumu == false) {
+            System.out.println("!! -- SÝLME ÝÞLEMÝ ÝÇÝN ELEMAN BULUNAMADI -- !!");
+        }
+    }
+
+    void bul(int no, String isim) {
+        boolean bulundumu = true;
+        boolean dongu = true;
+        int mod;
+        String aranan = isim;
+        mod = no % 11;
+        while (dongu) {
+            if (mod == 11) {
+                bulundumu = false;
+                dongu = false;
+            } else if (Hash[mod] == aranan) {
+                System.out.println("!! -- ELEMAN BULUNDU: "+mod+".ELEMAN -- !!");
+                dongu = false;
+            } else {
+                bulundumu = false;
+                mod++;
+            }
+        }
+
+        if (bulundumu == false) {
+            System.out.println("!! -- ELEMAN BULUNAMADI -- !!");
+        }
+    }
+
+    
+    void goruntule() {
+        System.out.println("----HASH TABLOSU----");
+        for (int i = 1; i < 11; i++) {
+            System.out.println(Hash[i]);
+        }
+        System.out.println("--------------------");
+    }
+}

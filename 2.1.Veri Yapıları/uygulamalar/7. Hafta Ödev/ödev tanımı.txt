@@ -1,0 +1,8 @@
+Bir AVL aðacýnda bir maðazadaki müþterilerin id’si(int), adý(String) ve borcu(double) tutulacaktýr.
+Gerekli veri yapýsýný tanýmlayarak aþaðýdaki metotlarý içeren programý yazýnýz?
+- Müþteri id’sine göre AVL aðacýna ekleme iþlemi için gerekli metodu yazýnýz?
+- AVL aðacýný level order gezinme yapýnýz (Kuyruk yapýsý kullanýlacaktýr)?
+- Bu AVL aðacýnýn ikili arama aðacý olup olmadýðýný geri döndüren metodu yazýnýz 
+NOT: Ýkili arama aðacýnda her düðüm sol çocuðundan büyük ve sað çocuðundan küçüktür?
+- Kendisine parametre olarak borç bilgisi alan ve AVL aðacýnda bu borçtan daha yüksek borçlarý 
+olan müþterilerin id, isim ve borçlarýný gösteren metodu yazýnýz.   

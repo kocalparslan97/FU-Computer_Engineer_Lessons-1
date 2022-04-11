@@ -1,0 +1,35 @@
+package esliparantezstack;
+
+public class Stack {
+
+    Node ilk;
+
+    Stack() {
+        ilk = null;
+    }
+
+    void push(Node yeni) {
+        if (ilk == null) {
+            ilk = yeni;
+        } else {
+            yeni.sonraki = ilk;
+            ilk = yeni;
+        }
+    }
+
+    void pop() {
+        
+        Node bastaki = ilk;
+        ilk = ilk.sonraki;
+        bastaki.sonraki = null;
+             
+    }
+    
+    void goster(){
+        Node temp=ilk;
+        while(temp!=null){
+            System.out.print(temp.parantez);
+            temp=temp.sonraki;
+        }
+    }
+}

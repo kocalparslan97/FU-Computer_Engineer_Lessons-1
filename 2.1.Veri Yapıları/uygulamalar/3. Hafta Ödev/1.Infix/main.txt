@@ -1,0 +1,14 @@
+
+package ýnfix;
+
+public class Infix {
+
+    public static void main(String[] args) {
+        conv convert=new conv();
+        convert.toPostfix("2*3+5");
+//        convert.posttoin("12+3-4+");
+
+        convert.posttoin("23*5+");
+    }
+    
+}

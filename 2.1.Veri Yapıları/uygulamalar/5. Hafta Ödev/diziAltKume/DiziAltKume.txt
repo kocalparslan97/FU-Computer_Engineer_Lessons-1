@@ -1,0 +1,16 @@
+package dizialtkume;
+public class DiziAltKume {
+    public static void main(String[] args) {
+        int liste1[]=new int[3];
+        liste1[0]=10;
+        liste1[1]=21;
+        liste1[2]=5;
+        
+        int liste2[]=new int[2];
+        liste2[0]=10;
+        liste2[1]=21;
+        
+        new Hash().altKume(liste1,liste2);
+    }
+    
+}

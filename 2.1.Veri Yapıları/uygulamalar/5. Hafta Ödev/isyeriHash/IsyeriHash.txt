@@ -1,0 +1,19 @@
+package isyerihash;
+
+/**
+ *
+ * @author Mert
+ */
+public class IsyeriHash {
+    public static void main(String[] args) {
+        elemanListe liste=new elemanListe();
+        liste.ekle(4, "Mert");
+        liste.ekle(7, "Ali");
+        liste.ekle(14, "Samet");
+        liste.goruntule();
+        liste.sil(14, "Samet");
+        liste.bul(4, "Mert");
+        
+    }
+    
+}

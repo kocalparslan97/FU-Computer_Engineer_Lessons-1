@@ -1,0 +1,295 @@
+package ýkiliarama;
+
+/**
+ *
+ * @author Mert
+ */
+public class Agac {
+    Yaprak root;
+    Agac(){
+        root=null;
+    }
+    
+    void Ekle(Yaprak yeni){
+        if(root==null){
+            root=yeni;
+        }
+        else{
+            
+            Yaprak temp=root;
+            boolean durum=true;
+            while(durum){
+                if(yeni.no < temp.no && temp.sol!=null){
+                    temp=temp.sol;
+                }
+                else if(yeni.no < temp.no && temp.sol==null){
+                    yeni.kok=temp;
+                    yeni.kok.sol=yeni;
+                    durum=false;
+                }
+                else if(yeni.no > temp.no && temp.sag!=null){
+                    temp=temp.sag;
+                }
+                else if(yeni.no > temp.no && temp.sag==null){
+                    yeni.kok=temp;
+                    yeni.kok.sag=yeni;
+                    durum=false;
+                }  
+            }
+            
+        }
+    }//ekle() sonu
+    
+    void maxDegerBul(){
+        Yaprak temp=root;
+        while(temp.sag!=null){
+            temp=temp.sag;
+        }
+        if(temp!=null){
+            System.out.println("En buyuk deger="+temp.no);
+        }
+        else{
+            System.out.println("En buyuk deger="+root.no);
+        }
+    }
+    
+    void minDegerBul(){
+        Yaprak temp=root;
+        while(temp.sol!=null){
+            temp=temp.sol;
+        }
+        if(temp!=null){
+            System.out.println("En kucuk deger="+temp.no);
+        }
+        else{
+            System.out.println("En kucuk deger="+root.no);
+        }
+    }
+    
+    void arama(int no){
+        Yaprak temp=root;
+        boolean durum=true;
+        boolean bulunma=false;
+        while(durum){
+            try{
+                if(no==temp.no){
+                    bulunma=true; durum=false;
+                }
+                else if(no>temp.no){
+                    temp=temp.sag;
+                }
+                else if(no<temp.no){
+                    temp=temp.sol;
+                }
+            }
+            catch(Exception e){
+                durum=false;
+            }
+            
+            
+        }
+        if(bulunma==true){
+            System.out.println(temp.no+" numarali ogrenci bulundu: "+temp.isim);
+        }
+        else{
+            System.out.println("Ogrenci bulunamadi!");
+        }
+    }
+    
+    void silme(int no){
+        Yaprak temp=root;
+        Yaprak temponceki=null;
+        Yaprak bos=null;
+        boolean durum=true;
+        boolean bulunma=false;
+        while(durum){
+            try{
+                if(no==temp.no){
+                    if(temp.kok.sag!=null){//hata vermemesi icin
+                        if(temp.kok.sag.no==no){
+                            Yaprak baglanacaksag=temp.sag;
+                            temp.kok.sag=temp.sol;
+                            temp=temp.sol;
+                            while(temp.sag!=null){
+                                temp=temp.sag;
+                            }
+                            temp.sag=baglanacaksag;
+                            while(temp.kok!=null){
+                                temp=temp.kok;
+                            }
+                            this.root=temp;
+                        }
+                    }
+                    if(temp.kok.sol!=null){//Hata vermemesi icin
+                        if(temp.kok.sol.no==no){
+                            Yaprak baglanacaksol=temp.sol;
+                            temp.kok.sol=temp.sag;
+                            temp=temp.sag;
+                            while(temp.sol!=null){
+                                temp=temp.sol;
+                            }
+                            temp.sol=baglanacaksol;
+                            while(temp.kok!=null){
+                                temp=temp.kok;
+                            }
+                            this.root=temp;
+
+                        }}
+                    bulunma=true;
+                    durum=false;
+                }
+                else if(no>temp.no){
+                    temp=temp.sag;
+                }
+                else if(no<temp.no){
+                    temp=temp.sol;
+                }
+            }
+            catch(Exception e){
+                durum=false;
+            }
+            
+            
+        }
+        
+        if(bulunma==true){
+            
+            System.out.println("Silindi");
+            }
+        else{
+            System.out.println("Bulunamadigindan Silinemedi");
+        }
+    }
+    
+    
+   void preorder(Yaprak dugum){
+       if(dugum!=null){
+           System.out.print(dugum.no+"|");
+           preorder(dugum.sol);
+           preorder(dugum.sag);
+       }
+   }
+   
+   void inorder(Yaprak dugum){
+       if(dugum!=null){
+           inorder(dugum.sol);
+           System.out.print(dugum.no+"|");
+           inorder(dugum.sag);
+       }
+   }
+   
+   void postorder(Yaprak dugum){
+       if(dugum!=null){
+           postorder(dugum.sol);
+           postorder(dugum.sag);
+           System.out.print(dugum.no+"|");
+           
+       }
+   }
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    void goster(){
+    try{
+        Yaprak temp=root;
+        System.out.print("\t\t\t\t\t| "+temp.no+" |");
+        System.out.println("\n\n");
+        if(temp.sol!=null){
+            System.out.print("\n\t\t\t| "+temp.sol.no+" |");
+        }
+        else{
+            System.out.print("\n\t\t\t\t\t\t\t\t\t");
+        }
+        
+        if(temp.sag!=null){
+            
+            System.out.println("\t\t\t\t| "+temp.sag.no+" |");
+        }
+        
+        
+        System.out.println("\n");
+        if(temp.sol.sol!=null){
+            System.out.print("\n\t    | "+temp.sol.sol.no+" |");
+        }
+        else{
+            System.out.print("\t\t");
+        }
+        
+        if(temp.sol.sag!=null){
+            System.out.print("\t\t| "+temp.sol.sag.no+" |");
+        }
+        else{
+            System.out.print("\t\t");
+        }
+        if(temp.sag.sol!=null){
+            System.out.print("\t\t| "+temp.sag.sol.no+" |");
+        }
+        else{
+            System.out.print("\t\t\t");
+        }
+        
+        if(temp.sag.sag!=null){
+            System.out.print("\t\t| "+temp.sag.sag.no+" |");
+        }
+        
+        
+        System.out.println("\n\n");
+        if(temp.sol.sol.sol!=null){
+            System.out.print("\n      |"+temp.sol.sol.sol.no+"|");
+        }
+        else{
+            System.out.print("\n\t");
+        }
+        
+        if(temp.sol.sol.sag!=null){
+            System.out.print("\t   |"+temp.sol.sol.sag.no+"|");
+        }
+        else{
+            System.out.print("\t       ");
+        }
+        
+        if(temp.sol.sag.sol!=null){
+            System.out.print("    |"+temp.sol.sag.sol.no+"|");
+        }
+        else{
+            System.out.print("\t\t");
+        }
+        
+        if(temp.sol.sag.sag!=null){
+            System.out.print("       |"+temp.sol.sag.sag.no+"|");
+        }
+        else{
+            System.out.print("\t\t");
+        }
+        
+        if(temp.sag.sol.sol!=null){
+            System.out.print("   |"+temp.sag.sol.sol.no+"|");
+        }
+        else{
+            System.out.print("  \t");
+        }
+        
+        if(temp.sag.sol.sag!=null){
+            System.out.print("     |"+temp.sag.sol.sag.no+"|");
+        }
+        else{
+            System.out.print("\t ");
+        }
+        if(temp.sag.sag.sol!=null){
+            System.out.print("   |"+temp.sag.sag.sol.no+"|");
+        }
+        else{
+            System.out.print("\t  ");
+        }
+        if(temp.sag.sag.sag!=null){
+            System.out.print("    |"+temp.sag.sag.sag.no+"|");
+        }
+    }
+    catch(Exception e){
+        
+    }
+    }
+        
+    
+}

@@ -1,0 +1,14 @@
+.data
+fak:	.word 5
+sonuc:	.word 1
+.text
+.globl main
+main:	addi $s0, $zero, 1
+	lw $s1, fak
+	lw $s2, sonuc
+Loop:	beq $s1, $s0, Exit
+	mul $s2, $s2, $s1
+	addi $s1, $s1, -1
+	j Loop
+Exit:
+.end main

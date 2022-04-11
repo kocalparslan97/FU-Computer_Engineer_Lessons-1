@@ -1,0 +1,20 @@
+package ýkiliarama;
+
+/**
+ *
+ * @author Mert
+ */
+public class Yaprak {
+    Yaprak sol,kok,sag;
+    int no,not;
+    String isim;
+    
+    Yaprak(int no,String isim,int not){
+        this.sol=null;
+        this.kok=null;
+        this.sag=null;
+        this.no=no;
+        this.isim=isim;
+        this.not=not;
+    }
+}

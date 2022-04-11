@@ -1,0 +1,17 @@
+.data
+sayi:	.word 2
+us:	.word 5
+.text
+.globl main
+main:	lw $s0, sayi
+	lw $s1, us
+	addi $s2, $zero, 0
+	addi $s3, $zero, 1
+loop:	slti $t0, $s1, 1
+	beq $t0, $zero, L2
+	j exit
+L2:	mul $s3, $s0, $s3
+	addi $s1, $s1,-1
+	j loop
+exit:
+.end main

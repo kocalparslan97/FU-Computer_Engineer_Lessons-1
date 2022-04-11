@@ -1,0 +1,71 @@
+package dizialtkume;
+
+/**
+ *
+ * @author Mert
+   */
+public class Hash {
+    
+    
+    boolean altKume(int anaDizi[],int altKume[]){
+
+        //HASH TABLOSU OLUSTURMA
+        Liste hash[]=new Liste[11];
+        for (int i = 0; i < 11; i++) {
+            hash[i]=new Liste();
+        }
+        
+        //ANADIZIYI HASH TABLOYA EKLEME
+        int anadiziboyut= anaDizi.length;
+        for (int i = 0; i < anadiziboyut; i++) {
+            int veri=anaDizi[i];
+            int mod=veri%11;
+            hash[mod].ekleme(new Dugum(veri));
+        }
+        
+        //HASH TABLOSUNU YAZDIRMA:
+        for (int i = 0; i < 11; i++) {
+            Dugum temp=hash[i].ilk;
+            boolean durum=true;
+            System.out.print("\n"+i+". satýr:");
+            while(durum){
+                if(temp==null){
+                    durum=false;
+                
+                }
+                else{
+                    System.out.print(" |"+temp.sayi+"| ");
+                    temp=temp.sonraki;
+                }
+            }
+        }
+        
+        //arama
+        int altkumeuzunluk=altKume.length;
+        boolean altkumemi=true;
+        int i=0;
+        while (i < altkumeuzunluk && altkumemi) {
+            boolean bulundumu=true;
+            
+            int aranacakveri=altKume[i];
+            int mod=aranacakveri%11;
+            Dugum gez=hash[mod].ilk;
+            while(bulundumu){
+                if(gez==null){
+                    bulundumu=false;
+                    altkumemi=false;
+                }
+                else if(gez.sayi==aranacakveri){
+                    bulundumu=false;
+                }
+                else{
+                    gez=gez.sonraki;
+                    
+                }
+            }
+            i++;
+        }
+        System.out.println("\nAltküme mi:"+altkumemi);
+        return altkumemi;
+    }
+}

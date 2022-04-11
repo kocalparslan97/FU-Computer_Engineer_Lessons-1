@@ -1,0 +1,18 @@
+1.	Verilen bir Stringteki parantezlerin eþli olup olmadýðýný yýðýt yapýsý kullanarak belirleyen metodu yazýnýz? 
+Örneðin parantezler ( { ( ) [ { } ] } ( ) ) þeklinde ise parantezler eþli olup doðru sýrada parantezler açýlmýþtýr. 
+( } ] ) ( ifadesi ise eþli olmayýp doðru sýrada açýlmamýþtýr. 
+Verilen ifadede sadece  (,  {, [,  ), }, ] parantez iþaretleri bulunmaktadýr.
+
+
+2.	Yýðýt kullanarak onluk tabandaki bir sayý ikilik tabana dönüþtürülmek isteniyor. 
+Örneðin 233 sayýsýnýn 2’lik tabana dönüþtürülmesi aþaðýda verilmiþtir.
+ Buna göre kendisine parametre olarak bir sayý alan ve sayýnýn ikilik tabandaki karþýlýðýný bir yýðýta yazdýran metodu ve 
+yýðýtý parametre olarak alýp yýðýt içeriðini bir string’e aktarýp geri döndüren metodu yazýnýz? 
+233/2 = 116  kalan =1   =  push(1)
+116/2 = 58 kalan =0  = push(0)
+58/2 = 29 kalan = 0 = push(0)
+29/2 = 14 kalan=1 = push(1)
+14/2 = 7 kalan=0 = push(0)
+7/2 = 3 kalan=1 push(1)
+3/2 = 1 kalan=1 push(1)
+1/2 =0 kalan=1 push(1)

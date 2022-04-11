@@ -1,0 +1,34 @@
+package dizialtkume;
+
+public class Liste {
+
+    Dugum ilk, son;
+
+    Liste() {
+        this.ilk = null;
+        this.son = null;
+    }
+
+    void ekleme(Dugum yeni) {
+        if (ilk == null) {
+            ilk = yeni;
+            son = yeni;
+        } 
+        else {
+            son.sonraki=yeni;
+            son=yeni;
+        }
+
+    }
+
+    
+    
+    void yazdir() {
+        Dugum gez = ilk;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print(gez.sayi);
+            gez = gez.sonraki;
+        }
+    }
+}

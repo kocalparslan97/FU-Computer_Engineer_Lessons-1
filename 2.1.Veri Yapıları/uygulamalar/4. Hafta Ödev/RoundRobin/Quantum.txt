@@ -1,0 +1,51 @@
+package roundrobin;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Mert
+ */
+public class Quantum {
+    int isparcasi;
+    Kuyruk kuyruk;
+    Quantum(int q){
+        kuyruk=new Kuyruk();
+        this.isparcasi=q;
+        
+    }
+    
+    void isYukle(){
+        System.out.println("Ýþ adedi giriniz:");
+        Scanner s=new Scanner(System.in);
+        int adet=s.nextInt();
+        for (int i = 0; i < adet; i++) {
+            System.out.print("Ýþyükü "+(i+1)+":");
+            int yuk=s.nextInt();
+            kuyruk.sonaEkle(new is(yuk));
+        }
+        System.out.print("Ýþler sýrasý ile yüklendi: ");
+        kuyruk.goster();
+        
+    }
+    
+    void calistir(){
+        boolean durum=true;
+        while(durum){
+            if(kuyruk.boyut()==0){
+                durum=false;
+            }
+            else{
+            if((kuyruk.ilk.a-isparcasi)>0){
+                kuyruk.sonaEkle(new is((kuyruk.ilk.a-isparcasi)));
+                kuyruk.bastanSil();
+            }
+            else{
+                kuyruk.bastanSil();
+            }}
+            System.out.print("\nAnlýk durum: ");
+            kuyruk.goster();
+        }
+    }
+    
+}

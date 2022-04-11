@@ -1,0 +1,16 @@
+1. Hash kullanarak verilen iki diziden ikincisinin birinci dizinin alt kümesi olup olmadýðý bulunmak isteniyor. 
+Bu amaçla aþaðýdaki algoritma kullanýlabilir. 
+a)	dizi1[]’in bütün elemanlarýný tutmak için bir hash tablosu oluþtur.
+b)	dizi2[]’nin her elemanýný hash tablosunda ara. Eðer eleman yok ise false döndür. 
+c)	Bütün elemanlar bulundu ise true döndür. 
+Zincir kuralýna (Baðlý Liste) göre çakýþmalarýn giderildiði bir Hash sýnýf oluþturarak yukarýdaki algoritmaya göre
+iki dizi yi parametre alan (boolean altküme(int[] dizi1, int[] dizi2){}) ve ikinci dizinin birinci dizinin bir alt 
+elemaný olup olmadýðýný bulan metodu yazýnýz? 
+
+
+2. Elimizde bir iþ yerine ait numara(int)  ve isim(String) bilgileri bulunmaktadýr. 
+Doðrusal sýnama (Lineer probing)’ya çakýþmalarýn giderildiði bir hash tablosunda;
+gelen elemanlarý (numarayý baz alarak) yerleþtiriniz. Arama, ekleme ve silme iþlemleri için
+gerekli metotlarý oluþturunuz.
+
+ 

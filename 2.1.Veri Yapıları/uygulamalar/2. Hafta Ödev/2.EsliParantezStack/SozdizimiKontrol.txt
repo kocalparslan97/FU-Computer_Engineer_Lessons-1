@@ -1,0 +1,64 @@
+package esliparantezstack;
+
+public class SozdizimiKontrol {
+
+    String veri;
+    Stack stack;
+
+    SozdizimiKontrol() {
+        stack = new Stack();
+    }
+
+    void Kontrol(String veri) {
+        char sub;
+        boolean sorun=false;
+        
+        try {
+            for (int i = 0; i < veri.length(); i++) {
+                sub = veri.charAt(i);
+                
+                if (sub == '{' || sub == '[' || sub == '(') {
+                    stack.push(new Node(sub));
+                } 
+                
+                else {
+                    if (sub == '}' && stack.ilk.parantez == '{') {
+                        stack.pop();
+                    } 
+                    
+                    else if (sub == ']' && stack.ilk.parantez == '[') {
+                        stack.pop();
+                    } 
+                    
+                    else if (sub == ')' && stack.ilk.parantez == '(') {
+                        stack.pop();
+                    } 
+                    
+                    else {
+                        if (sub == '}' || sub == ']' || sub == ')') {
+                            sorun = true;
+                        }
+                    }
+                }
+
+            }
+        }
+        catch (Exception e){
+            sorun=true;
+        }
+        
+        if (stack.ilk == null) {
+            if (sorun == false) {
+                System.out.println("SORUN YOK");
+            } 
+            else {
+                System.out.println("SORUN VAR");
+            }
+        } 
+        
+        else {
+            System.out.println("SORUN VAR");
+        }
+
+    }
+}

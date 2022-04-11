@@ -1,0 +1,12 @@
+package roundrobin;
+
+public class is {
+    is onceki,sonraki;
+    int a;
+    is(int isyuku){
+        onceki=null;
+        sonraki=null;
+        this.a=isyuku;
+    }
+}
+

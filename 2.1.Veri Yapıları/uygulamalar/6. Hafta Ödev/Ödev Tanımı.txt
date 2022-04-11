@@ -1,0 +1,6 @@
+++ Bir ikili arama aðacýnda öðrencilerin numarasý(int), adý(String) ve notu(int) tutulacaktýr.
+++ Aðaçta ekleme numaraya göre yapýlmaktadýr. 
+++ Bir ikili arama aðacýnda Ekleme, silme, arama, maksimum ve minimum elemaný bulma, 
+++   Arama aðacýnda dolaþým (Preorder, inorder, postorder) ve aðacý gösterme metotlarýný içeren sýnýfý tasarlayýnýz 
+test metodunu yazýnýz? 
+Ýkili arama aðacýnda lever-order (seviye seviye) dolaþmayý yapýnýz. (Kuyruk yapýsý kullanýlacaktýr)?

@@ -1,0 +1,11 @@
+package roundrobin;
+
+public class RoundRobin {
+
+    public static void main(String[] args) {
+            Quantum q=new Quantum(10);
+            q.isYukle();
+            q.calistir();
+    }
+    
+}

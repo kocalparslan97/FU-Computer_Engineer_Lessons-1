@@ -1,0 +1,11 @@
+
+package ýnfix;
+
+public class Node {
+    Node sonraki;
+    char a;
+    Node(char a){
+        sonraki=null;
+        this.a=a;
+    }
+}

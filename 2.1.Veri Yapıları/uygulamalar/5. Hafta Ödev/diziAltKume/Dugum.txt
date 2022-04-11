@@ -1,0 +1,11 @@
+package dizialtkume;
+
+public class Dugum {
+    Dugum sonraki;
+    int sayi;
+    Dugum(int sayi){
+        this.sayi=sayi;
+        
+        this.sonraki=null;
+    }
+}

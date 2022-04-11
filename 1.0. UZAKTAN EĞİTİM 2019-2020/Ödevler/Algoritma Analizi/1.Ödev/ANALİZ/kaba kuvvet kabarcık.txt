@@ -1,0 +1,8 @@
+En kötü durumda (worst case analysis): n2 olur.
+Sebebini þu þekilde açýklayalým. 
+Her geçiþte geçiþ sayýsý kadar elemana bakýlmasý gerekir. 
+Örneðin eleman sayýsý n olan bir dizi için k. geçiþte n-k elemana bakýlýr. 
+Dolayýsýyla 0. geçiþkte n elemana 1. geçiþte n-1 elemana son geçiþte ise n-n yani 0 elemana bakýlýr. 
+Bu durumda toplam sayý 1’den n’ya kadar olan sayýlrýn toplamýdýr ve
+
+n x (n+1) / 2

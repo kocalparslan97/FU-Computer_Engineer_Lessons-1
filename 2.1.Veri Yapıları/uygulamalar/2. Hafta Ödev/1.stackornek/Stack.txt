@@ -1,0 +1,42 @@
+package stackornek;
+public class Stack {
+    Node ilk;
+    Stack(){
+        ilk=null;
+    }
+    void push(Node yeni){
+        if(ilk==null){
+            ilk=yeni;
+        }
+        else{
+            yeni.sonraki=ilk;
+            ilk=yeni;
+        }
+    }
+      
+    int pop(){
+        Node bastaki=ilk;
+        ilk=ilk.sonraki;
+        bastaki.sonraki=null;
+        return bastaki.a;
+    }
+    
+    void goster(){
+        Node temp=ilk;
+        while(temp!=null){
+            System.out.print(temp.a);
+            temp=temp.sonraki;
+        }
+    }
+    
+    //tersine çevirme iþlemi için boyut hesaplama
+    int boyut(){
+        int sayac=0;
+        Node temp=ilk;
+        while(temp!=null){
+            sayac++;
+            temp=temp.sonraki;
+        }
+        return sayac;
+    }
+}

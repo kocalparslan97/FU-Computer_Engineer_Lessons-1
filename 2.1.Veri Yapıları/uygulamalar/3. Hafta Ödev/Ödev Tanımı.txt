@@ -1,0 +1,9 @@
+1.	String olarak alýnan bir infix ifade için yýðýt kullanýlarak aþaðýdaki iþlemler yapýlacaktýr. 
+-	Verilen infix ifadeyi postfix’e dönüþtüren metodu yazýnýz.
+-	Verilen infix ifadeyi prefix’e dönüþtüren metodu yazýnýz.
+-	Hesaplanan postfix ifadenin sonucunu hesaplayan metodu yazýnýz.
+2.	N uzunluktaki bir dizi üzerinde iki tane yýðýt yapýsý kurulmak istenmektedir. 
+Y adlý yýðýt dizisinin Y[0] elemaný birinci yýðýt için, Y[N-1] elemaný da ikinci Yýðýt için G/Ç uçlarýdýr. 
+Ýki yýðýta konulacak toplam eleman sayýsý N olup ilgili gözleri iki yýðýt tarafýndan da boþ olduðu sürece kullanýlabilir. 
+Yýðýtýn dolu olmasý için tüm gözlerin dolu olmasý gerekir. Bir yýðýtýn boþalttýðý bellek gözünü diðer yýðýt kullanabilir. 
+Bu yapýdaki Yýðýt için gerekli veri yapýsýný tanýmlayarak Yýðýt iþlemlerini gerçekleþtiren kodlarý yazýnýz.  

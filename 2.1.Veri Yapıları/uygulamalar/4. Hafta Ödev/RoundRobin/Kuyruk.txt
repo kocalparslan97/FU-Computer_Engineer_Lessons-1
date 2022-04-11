@@ -1,0 +1,69 @@
+package roundrobin;
+
+/**
+ *
+ * @author Mert
+ */
+public class Kuyruk {
+    is ilk,son;
+    Kuyruk(){
+        ilk=null;
+        son=null;
+    }
+    void basaEkle(is ch){
+        if(ilk==null){
+            this.ilk=ch;
+            this.son=ch;
+        }
+        else{
+            ilk.onceki=ch;
+            ch.sonraki=ilk;
+            ilk=ch;
+        }
+    }
+    
+    void sonaEkle(is ch){
+        if(son==null){
+            this.ilk=ch;
+            this.son=ch;
+        }
+        else{
+            son.sonraki=ch;
+            ch.onceki=son;
+            son=ch;
+        }
+    }
+    
+    void bastanSil(){
+        if(ilk.sonraki!=null){
+        ilk.sonraki.onceki=null;
+        ilk=ilk.sonraki;}
+        else{
+            ilk=null;
+        }
+    }
+    
+    void sondanSil(){
+        son.onceki.sonraki=null;
+        son=son.onceki;
+    }
+    
+    void goster(){
+        is temp=ilk;
+        while(temp!=null){
+            System.out.print(temp.a+" ");
+            temp=temp.sonraki;
+        }
+    }
+    
+    //boyut hesaplama
+    int boyut(){
+        int sayac=0;
+        is temp=ilk;
+        while(temp!=null){
+            sayac++;
+            temp=temp.sonraki;
+        }
+        return sayac;
+    }
+}

@@ -1,0 +1,111 @@
+package ýnfix;
+public class conv {
+//---------------------------------------------POSTFIX------------------------------------------------
+    void toPostfix(String ifade){
+        Stack stack=new Stack();
+        char sub;
+        String postfix="";
+        for (int i = 0; i < ifade.length(); i++) {
+             sub=ifade.charAt(i);
+            if(sub=='*' || sub=='/'){
+                if(stack.ilk==null){
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='+' || stack.ilk.a=='-'){
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='*' || stack.ilk.a=='/'){
+                    while(stack.ilk!=null){
+                        postfix=postfix+stack.pop();
+                    }
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='('){
+                    stack.push(new Node(sub));
+                }
+            }
+            else if(sub=='+' || sub=='-'){
+                if(stack.ilk==null){
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='+' || stack.ilk.a=='-'){
+                    while(stack.ilk!=null){
+                        postfix=postfix+stack.pop();
+                    }
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='*' || stack.ilk.a=='/'){
+                    while(stack.ilk!=null){
+                        postfix=postfix+stack.pop();
+                    }
+                    stack.push(new Node(sub));
+                }
+                else if(stack.ilk.a=='('){
+                    stack.push(new Node(sub));
+                }
+            }
+            else if(sub=='('){
+                stack.push(new Node(sub));
+            }
+            
+            else if(sub==')'){
+                char deger=stack.pop();
+                while(deger!='('){
+                    postfix=postfix+deger;
+                    deger=stack.pop();
+                }
+                
+            }
+            else{
+                postfix=postfix+sub;
+            }}
+            while(stack.ilk!=null){
+                postfix=postfix+stack.pop();
+            }
+        
+        System.out.println(postfix);
+        
+        
+    
+    }
+//---------------------------------------------POSTFIX HESAPLA------------------------------------------------
+
+    void posttoin(String ifade){
+    
+        Stack stack=new Stack();
+        char sub;
+        int sayi1=-1;
+        int sayi2=0;
+        
+        
+        
+        for (int i = 0; i < ifade.length(); i++) {
+            sub=ifade.charAt(i);
+            if(sub=='+'||sub=='-'||sub=='*'||sub=='/'){
+                if(sub=='+'){
+                    sayi1=sayi1+sayi2;
+                }
+                else if(sub=='-'){
+                    sayi1=sayi1-sayi2;
+                }
+                else if(sub=='/'){
+                    sayi1=sayi1/sayi2;
+                }
+                else {
+                    sayi1=sayi1*sayi2;
+                }
+            }
+            else{
+                if(sayi1==-1){
+                    sayi1=Integer.parseInt(sub+"");
+                }
+                else{
+                    sayi2=Integer.parseInt(sub+"");
+                }
+            }
+            
+        }
+        System.out.println(sayi1);
+    }
+
+}

@@ -1,0 +1,12 @@
+package stackornek;
+public class StackOrnek {
+    public static void main(String[] args) {
+        
+        dectobin cevirici=new dectobin(65);
+        cevirici.cevir();
+//        cevirici.stack.pop(); //en anlamlý biti çýkarýr
+        cevirici.stack.goster();
+        cevirici.tersinecevir(); //stack boþalmýþ olacak
+    }
+    
+}

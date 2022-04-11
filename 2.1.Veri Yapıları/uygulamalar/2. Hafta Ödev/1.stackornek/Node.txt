@@ -1,0 +1,10 @@
+package stackornek;
+
+public class Node {
+    Node sonraki;
+    int a;
+    Node(int a){
+        sonraki=null;
+        this.a=a;
+    }
+}
